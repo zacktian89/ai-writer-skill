@@ -8,6 +8,8 @@
 
 ## 1. 项目是做什么的？
 
+![WeChat Skill 工作流程总览](docs/skill-workflow-overview.png)
+
 这个项目提供一组专门服务微信公众号文章生产的 Skill：
 
 - 从主题、资料或提纲出发，生成文章策略、大纲、标题和正文。
