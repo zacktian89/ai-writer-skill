@@ -1,25 +1,28 @@
-# WeChat Skill
+# AIME WeChat Skill
+
 
 ![AI 写作风险扫描示意图](docs/ai-writing-risk-review-screenshot.png)
 
-面向微信公众号内容生产的 LLM Skill 集合。它把写作、AI 写作风险审核、配图调研、微信 HTML 排版和本地预览拆成可复用的能力模块，让支持 Skill 的 LLM 或 Agent 可以按流程完成公众号文章生产。
+**“专注于AI协同生产高质量的文章：高效、美观、有深度”。**
+**“一键生成，快速复制，让你回归更有价值的创作本身”。**
 
-项目本身不绑定某一个客户端。只要运行环境能读取 `SKILL.md`、保留相对路径下的 `references/` 与 `scripts/`，就可以把本仓库作为微信公众号内容工作流使用。
-
-## 1. 项目是做什么的？
+## 1. 项目简介
 
 ![WeChat Skill 工作流程总览](docs/skill-workflow-overview.png)
 
-这个项目提供一组专门服务微信公众号文章生产的 Skill：
+本仓库提供一组专门服务微信公众号文章生产的 Skill：
 
 - 从主题、资料或提纲出发，生成文章策略、大纲、标题和正文。
-- 把正文整理为微信友好的 `article#wechatArticle` HTML。
-- 生成可在浏览器打开的本地 HTML 预览页面。
-- 调研正文配图、封面候选、来源、授权和使用风险。
-- 评估文章的 AI 写作风险、模板化痕迹和信息密度问题。
-- 将以上环节串成一条完整的文章生产流水线。
+- 把正文整理为排版精良的 HTML，快速预览、便捷修改。
+- 可调研正文配图、封面候选、来源、授权和使用风险。
+- 可评估文章的 AI 写作风险、模板化痕迹和信息密度问题。
+- 可将以上环节串成一条完整的文章生产流水线。
 
-最终交付通常是本地预览页或可复制到微信后台的 HTML 正文，由使用者在发布前完成事实、版权和平台审核。
+最终交付通常是本地预览页，快速复制粘贴到公众号后台。
+
+![HTML 预览页面截图](docs/preview-screenshot.png)
+
+内置10余款主题，让你告别排版烦恼，基于html排版，样式更丰富。
 
 ## 2. 典型使用场景是什么？
 
@@ -35,8 +38,6 @@
 
 - **HTML 优先工作流**：排版阶段直接以 HTML 作为正文主稿，减少 Markdown 与 HTML 两份内容来回同步的成本。
 - **生成 HTML 预览页面，并可以微调样式**：`wechat-article-formatter` 可以生成完整本地预览页，预览页支持主题切换、编辑、批注、复制正文等操作，方便在复制到微信后台前检查和微调样式。
-
-![HTML 预览页面截图](docs/preview-screenshot.png)
 
 - **微信复制友好**：正文主体集中在 `article#wechatArticle`，便于抽取、复制和交接。
 - **本地图片内联处理**：对本地图片资源提供 Base64 Data URL 内联脚本，降低复制到微信后台后图片失效的风险。
@@ -54,17 +55,6 @@
 | `article-image-research` | 负责配图调研、来源记录、授权/归因、正文匹配度评分和风险初筛。 | 需要为正文小节、封面、解释图、产品图、截图或证据图找可追溯图片。 |
 | `ai-writing-risk-review` | 负责评估 AI 写作、AI 辅助润色、人机混写或模板化写作风险，输出风险等级、概率拆解、证据链、反证解释和修订建议。 | 需要检查文章是否有明显 AI 痕迹、低信息密度或模板化表达，并希望提升文本自然度和可信度。 |
 
-## 5. 如何安装
-
-### 通过 ClawHub 安装
-
-```bash
-clawhub install wechat-article-pipeline
-clawhub install wechat-auto-article-writer
-clawhub install wechat-article-formatter
-clawhub install article-image-research
-clawhub install ai-writing-risk-review
-```
 
 ### 通过 GitHub 安装
 
@@ -75,20 +65,6 @@ clawhub install ai-writing-risk-review
 
 - 项目地址：https://github.com/zacktian89/wechat-auto-skill
 - Skill 目录：https://github.com/zacktian89/wechat-auto-skill/tree/master/skills
-```
-
-## 目录结构
-
-```text
-skills/
-  wechat-article-pipeline/      # 完整流水线入口
-  wechat-auto-article-writer/   # 公众号写作与改写
-  wechat-article-formatter/     # HTML 排版、主题化和预览
-  article-image-research/       # 配图调研、授权和风险初筛
-  ai-writing-risk-review/       # AI 写作风险评估
-docs/
-  preview-screenshot.png        # README 使用的预览页截图
-dist/                           # 本地预览和示例产物，默认不作为源码发布
 ```
 
 ## 使用边界
