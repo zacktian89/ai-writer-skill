@@ -37,6 +37,7 @@
 - **微信复制友好**：正文主体集中在 `article#wechatArticle`，便于抽取、复制和交接。
 - **本地图片内联处理**：对本地图片资源提供 Base64 Data URL 内联脚本，降低复制到微信后台后图片失效的风险。
 - **内容风险前置**：内置 AI 写作风险评估和配图授权风险初筛，让发布前检查更系统。
+- **AI 写作风险扫描**：`ai-writing-risk-review` 可以对文章进行类似检测器的风险扫描，输出人工/AI 风险等级、概率拆解、主要证据、反证解释和修订建议，帮助用户提升自然表达、信息密度和可核验性。
 - **模块可单独使用**：写作、排版、找图、审核、流水线都可以独立调用。
 
 ## 4. 每个 Skill 功能描述
@@ -47,9 +48,21 @@
 | `wechat-article-writer` | 负责公众号写作、改写、拟纲、标题、摘要、开头、结构、中文语感、信息密度和结尾动作。 | 已有主题、资料或草稿，需要把文章写顺、写具体、写得更像真实账号内容。 |
 | `wechat-article-formatter` | 负责生成、规范化、主题化和预览微信 HTML 正文；支持本地预览页、主题预设、正文复制和图片内联。 | 已有正文、提纲、Markdown 或 HTML，需要排成微信公众号可用格式。 |
 | `article-image-research` | 负责配图调研、来源记录、授权/归因、正文匹配度评分和风险初筛。 | 需要为正文小节、封面、解释图、产品图、截图或证据图找可追溯图片。 |
-| `ai-writing-risk-review` | 负责评估 AI 写作、AI 辅助润色、人机混写或模板化写作风险，并给出证据化判断。 | 需要检查文章是否有明显 AI 痕迹、低信息密度或模板化表达。 |
+| `ai-writing-risk-review` | 负责评估 AI 写作、AI 辅助润色、人机混写或模板化写作风险，输出风险等级、概率拆解、证据链、反证解释和修订建议。 | 需要检查文章是否有明显 AI 痕迹、低信息密度或模板化表达，并希望提升文本自然度和可信度。 |
 
 ## 5. 如何安装
+
+### 通过 ClawHub 安装
+
+```bash
+clawhub install wechat-article-pipeline
+clawhub install wechat-auto-article-writer
+clawhub install wechat-article-formatter
+clawhub install article-image-research
+clawhub install ai-writing-risk-review
+```
+
+### 通过 GitHub 安装
 
 把下面提示词发给当前 AI 客户端即可：
 
@@ -65,7 +78,7 @@
 ```text
 skills/
   wechat-article-pipeline/      # 完整流水线入口
-  wechat-article-writer/        # 公众号写作与改写
+  wechat-auto-article-writer/   # 公众号写作与改写
   wechat-article-formatter/     # HTML 排版、主题化和预览
   article-image-research/       # 配图调研、授权和风险初筛
   ai-writing-risk-review/       # AI 写作风险评估
