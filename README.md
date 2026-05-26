@@ -1,5 +1,7 @@
 # WeChat Skill
 
+![AI 写作风险扫描示意图](docs/ai-writing-risk-review-screenshot.png)
+
 面向微信公众号内容生产的 LLM Skill 集合。它把写作、AI 写作风险审核、配图调研、微信 HTML 排版和本地预览拆成可复用的能力模块，让支持 Skill 的 LLM 或 Agent 可以按流程完成公众号文章生产。
 
 项目本身不绑定某一个客户端。只要运行环境能读取 `SKILL.md`、保留相对路径下的 `references/` 与 `scripts/`，就可以把本仓库作为微信公众号内容工作流使用。
