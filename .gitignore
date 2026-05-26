@@ -1,0 +1,7 @@
+dist/
+app/dist-electron/
+.agent/
+.agents/
+.superpowers/
+.DS_Store
+**/.DS_Store
