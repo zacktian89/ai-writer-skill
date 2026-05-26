@@ -1,10 +1,12 @@
-# AIME WeChat Skill
-
-
-![AI 写作风险扫描示意图](docs/ai-writing-risk-review-screenshot.png)
+## AIME WeChat Skill
 
 **“专注于AI协同生产高质量的文章：高效、美观、有深度”。**
+
 **“一键生成，快速复制，让你回归更有价值的创作本身”。**
+
+去除AI味，阅读更自然：
+![AI 写作风险扫描示意图](docs/ai-writing-risk-review-screenshot.png)
+
 
 ## 1. 项目简介
 
@@ -23,6 +25,12 @@
 ![HTML 预览页面截图](docs/preview-screenshot.png)
 
 内置10余款主题，让你告别排版烦恼，基于html排版，样式更丰富。
+
+## 实际效果预览
+
+[查看已发布的微信文章：深入浅出 Agent Skill：从快速入门到生产级最佳实践](https://mp.weixin.qq.com/s/ndwC8KsZNkUCNNWPf52TsA)
+
+![微信公众号文章实际效果预览](docs/wechat-article-effect-preview.png)
 
 ## 2. 典型使用场景是什么？
 
